@@ -6,7 +6,6 @@ def function(pa):
     general=[]
 
 
-
     #Jugador
     for x in range(0,3):
         palabra_random=random.choice(cartas) #Pickea una palabra random de cartas
@@ -46,6 +45,28 @@ cartas=[
     '7 de oro','7 de espada',
     '1 de basto',
     '1 de espada']
+#Valores de cada carta (Vector ordenado en base al anterior)
+valores_cartas=[
+    1,1,1,1,
+    2,2,2,2,
+    3,3,3,3,
+    4,4,
+    5,5,5,5,
+    6,6,6,6,
+    7,7,7,7,
+    8,8,
+    9,9,9,9,
+    10,10,10,10,
+    11,12,
+    13,
+    14
+]
 
 
 print(function(cartas))
+######TEMPORAL########
+#Imprimir cada carta con su respectivo valor#
+for i in range (0,40):
+    print(cartas[i],":",valores_cartas[i])
+
+
