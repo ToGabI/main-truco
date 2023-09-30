@@ -1,4 +1,5 @@
 import random
+import libreria
 
 def function(pa):
     jugador=[]
@@ -68,5 +69,5 @@ print(function(cartas))
 #Imprimir cada carta con su respectivo valor#
 for i in range (0,40):
     print(cartas[i],":",valores_cartas[i])
-
-
+########EJEMPLO PARA USAR FUNCIONES##########
+#libreria.prueba()
