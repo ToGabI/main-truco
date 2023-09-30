@@ -1,4 +1,3 @@
-import librerias
 import random
 
 def function(pa):
@@ -71,4 +70,3 @@ for i in range (0,40):
     print(cartas[i],":",valores_cartas[i])
 
 
-print(librerias.prueba(1))
