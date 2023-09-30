@@ -33,7 +33,7 @@ def function(pa):
 #Programa
 
 cartas=[
-    '4 de copas':1,'4 de espada':1,'4 de basto':1,'4 de oro':1,
+    '4 de copas','4 de espada','4 de basto','4 de oro',
     '5 de copas','5 de espada','5 de basto','5 de oro',
     '6 de copas','6 de espada','6 de basto','6 de oro',
     '7 de copas','7 de basto',
