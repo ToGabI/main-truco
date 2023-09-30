@@ -1,3 +1,4 @@
+import librerias
 import random
 
 def function(pa):
@@ -68,3 +69,6 @@ print(function(cartas))
 #Imprimir cada carta con su respectivo valor#
 for i in range (0,40):
     print(cartas[i],":",valores_cartas[i])
+
+
+print(librerias.prueba(1))
