@@ -4,7 +4,7 @@ def function(pa):
     jugador=[]
     bot=[]
     general=[]
-
+#holal
 
 
     #Jugador
