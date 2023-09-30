@@ -32,7 +32,7 @@ def function(pa):
 #Programa
 
 cartas=[
-    '4 de copas':,'4 de espada':,'4 de basto':,'4 de oro':,
+    '4 de copas','4 de espada','4 de basto','4 de oro',
     '5 de copas','5 de espada','5 de basto','5 de oro',
     '6 de copas','6 de espada','6 de basto','6 de oro',
     '7 de copas','7 de basto',
@@ -64,3 +64,7 @@ valores_cartas=[
 
 
 print(function(cartas))
+######TEMPORAL########
+#Imprimir cada carta con su respectivo valor#
+for i in range (0,40):
+    print(cartas[i],":",valores_cartas[i])
