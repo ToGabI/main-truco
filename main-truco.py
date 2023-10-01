@@ -1,33 +1,6 @@
 import random
 import libreria
 
-def function(pa):
-    jugador=[]
-    bot=[]
-    general=[]
-
-
-    #Jugador
-    for x in range(0,3):
-        palabra_random=random.choice(cartas) #Pickea una palabra random de cartas
-        for e in range(0,len(jugador)): #Ciclo que servira para recorrer cada elemento del array cartas
-            while jugador.__contains__(palabra_random) == True: #Si el array contiene la palabra pickeada, genera otra
-                palabra_random=random.choice(cartas)
-        jugador.append(palabra_random)
-
-
-    #Maquina
-    for x in range(0,3):
-        palabra_random=random.choice(cartas) #Pickea una palabra random de cartas
-        for e in range(0,len(bot)): #Ciclo que servira para recorrer cada elemento del array cartas
-            while bot.__contains__(palabra_random) == True or jugador.__contains__(palabra_random) == True: #Si el array contiene la palabra pickeada o si el jugador la tiene, genera otra
-                palabra_random=random.choice(cartas)
-        bot.append(palabra_random)    
-    
-    general.append(bot)
-    general.append(jugador)
-    return general
-
 
 
 #Programa
@@ -64,10 +37,21 @@ valores_cartas=[
 ]
 
 
-print(function(cartas))
+#print(libreria.function(cartas))
 ######TEMPORAL########
 #Imprimir cada carta con su respectivo valor#
 for i in range (0,40):
     print(cartas[i],":",valores_cartas[i])
 ########EJEMPLO PARA USAR FUNCIONES##########
 #libreria.prueba()
+
+####PRUEBA REPARTIR
+vec_cartasJugador,vec_cartasBot=libreria.repartir(cartas) #SE USA libreria.*nombre_funcion* para invocar la funcion deseada
+#################TESTEO DE FUNCION "ELEGIR_CARTA"###############
+#USO: variable_carta_elegida=libreria.elegir_carta(vec_cartasJugador/Bot)
+print(vec_cartasJugador)
+var_cartaElegida=libreria.elegir_carta(vec_cartasJugador)
+while var_cartaElegida=="":  #SI LA FUNCION DETECTA QUE LA CARTA NO ESTA EN LA MANO O FUE MAL ESCRITA, LA VARIABLE QUEDA VACÍA PERO HAY QUE VOLVER A USAR LA FUNCION
+    print("Su mano no há sido modificada.")
+    var_cartaElegida=libreria.elegir_carta(vec_cartasJugador)
+print(vec_cartasJugador)
