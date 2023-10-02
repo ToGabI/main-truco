@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 import random
 
-#-------------------------------------------------------#
-#--------------------'CONTENEDORES'---------------------#
-#-------------------------------------------------------#
+#########################################################
+#########################################################
+#########################################################
 cartas=[
     '4 de copas','4 de espada','4 de basto','4 de oro',
     '5 de copas','5 de espada','5 de basto','5 de oro',
@@ -32,20 +31,8 @@ valores_cartas=[
     10,10,10,10,
     11,12,
     13,
-    14
-]
+    14]
 
-
-
-#-------------------------------------------------------#
-#----------------------'FUNCIONES'----------------------#
-#-------------------------------------------------------#
-
-=======
-
-
-import random
->>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
 #########################################################
 #################FUNCION PARA REPARTIR###################
 #########################################################
@@ -75,10 +62,6 @@ def repartir(cartas):
     general.append(bot)
     general.append(jugador)
     return general
-<<<<<<< HEAD
-#########################################################
-=======
->>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
 #########################################################
 ################FUNCION PARA ELEGIR CARTA################
 #########################################################
@@ -101,17 +84,22 @@ def elegir_carta(par_manoJugador):
         for x in range (0,3):
             if par_manoJugador[x]==var_cartaElegida:
                 par_manoJugador[x]="*Carta Usada*"
-<<<<<<< HEAD
-    return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
-#########################################################
-#########################################################
-##################FUNCION PARA BUSCAR VALOR DE CARTA#####
-#########################################################
-=======
     return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
 #########################################################
 ##############FUNCION PARA ELEGIR CARTA BOT##############
 #########################################################
-def elegir_cartaBot(par_manoBot,par_cartaJugada,par_rondaActual):#par_manoBot: Mano de cartas del bot | par_cartaJugada: Carta usada por el jugador | par_rondaActual: Ronda actual de la mano (1-3)
-    for i in range (0,3):
->>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
+
+#########################################################
+##############FUNCION OBTENER VALORES CARTAS#############
+#########################################################
+def valores_de_mano(par_manoJugador):
+    vec_valores=[]
+    for x in range(0,3):
+        if par_manoJugador[x] not in cartas:#IMPORTANTE, esto verifica si la carta "Fue usada", de esa manera, cada vez que aparezca un "*Carta usada*" en la mano del jugador, lo reemplaza por un valor negativo
+            vec_valores.append(-1)
+        else:
+            valores=cartas.index(par_manoJugador[x])#Esto lo que hace es guardar las posiciones de la manoJugador del array 'Cartas', para despues buscar sus respectivos valores en el array 'Valores_cartas'. El 'index' cumple la misma funcion que el 'find' solo que en arrays
+            vec_valores.append(valores_cartas[valores]) #Esto compara las posiciones de manoJugador con las de 'Valores_cartas' y los va poniendo en el array
+    return vec_valores
+    
+

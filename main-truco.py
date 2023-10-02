@@ -1,5 +1,4 @@
 import random
-from libreria import(cartas,valores_cartas) #importa las variables de libreria
 import libreria
 
 def function(pa):
@@ -82,11 +81,20 @@ while x < 3:
     x=x+1
 print(vec_cartasBotValor)
 
+
 #################TESTEO DE FUNCION "ELEGIR_CARTA"###############
 #USO: variable_carta_elegida=libreria.elegir_carta(vec_cartasJugador/Bot)
+
+###TESTEO PARA VER SI FUNCIONA LO DE VALORES#####
 print(vec_cartasJugador)
-var_cartaElegida=libreria.elegir_carta(vec_cartasJugador)
-while var_cartaElegida=="":  #SI LA FUNCION DETECTA QUE LA CARTA NO ESTA EN LA MANO O FUE MAL ESCRITA, LA VARIABLE QUEDA VACÍA PERO HAY QUE VOLVER A USAR LA FUNCION
-    print("Su mano no há sido modificada.")
+print('Valores de la mano: ', libreria.valores_de_mano(vec_cartasJugador))
+
+for x in range(0,3):
     var_cartaElegida=libreria.elegir_carta(vec_cartasJugador)
-print(vec_cartasJugador)
+    print('Valores de la mano: ', libreria.valores_de_mano(vec_cartasJugador))
+    while var_cartaElegida=="":  #SI LA FUNCION DETECTA QUE LA CARTA NO ESTA EN LA MANO O FUE MAL ESCRITA, LA VARIABLE QUEDA VACÍA PERO HAY QUE VOLVER A USAR LA FUNCION
+        print("Su mano no há sido modificada.")
+        var_cartaElegida=libreria.elegir_carta(vec_cartasJugador)
+        print('Valores de la mano: ', libreria.valores_de_mano(vec_cartasJugador))
+    print(vec_cartasJugador)
+
