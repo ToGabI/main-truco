@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 
 #-------------------------------------------------------#
@@ -40,6 +41,11 @@ valores_cartas=[
 #----------------------'FUNCIONES'----------------------#
 #-------------------------------------------------------#
 
+=======
+
+
+import random
+>>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
 #########################################################
 #################FUNCION PARA REPARTIR###################
 #########################################################
@@ -69,7 +75,11 @@ def repartir(cartas):
     general.append(bot)
     general.append(jugador)
     return general
+<<<<<<< HEAD
 #########################################################
+=======
+###################################################################################
+>>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
 #########################################################
 ##################FUNCION PARA COMPARAR##################
 #########################################################
@@ -92,8 +102,12 @@ def elegir_carta(par_manoJugador):
         for x in range (0,3):
             if par_manoJugador[x]==var_cartaElegida:
                 par_manoJugador[x]="*Carta Usada*"
+<<<<<<< HEAD
     return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
 #########################################################
 #########################################################
 ##################FUNCION PARA BUSCAR VALOR DE CARTA#####
 #########################################################
+=======
+    return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
+>>>>>>> 30d8015e82dfa42e93b50b9a3fb44579b0679905
