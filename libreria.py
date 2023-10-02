@@ -30,9 +30,8 @@ def repartir(cartas):
     general.append(bot)
     general.append(jugador)
     return general
-###################################################################################
 #########################################################
-##################FUNCION PARA COMPARAR##################
+################FUNCION PARA ELEGIR CARTA################
 #########################################################
 def elegir_carta(par_manoJugador):
     print("Su mano actual es: ", par_manoJugador)
@@ -46,7 +45,7 @@ def elegir_carta(par_manoJugador):
                 i=4
         else:
             i=i+1
-        if i==3:   #Cuando i=3 significa que la proxima vez va a romper el ciclo, es decir que si la carta elegida aún no coincide con alguna de la manose le comunica al jugador que la carta que eligió no forma parte de su mano/no fue bien escrita
+        if i==3:   #Cuando i=3 significa que la proxima vez va a romper el ciclo, es decir que si la carta elegida aún no coincide con alguna de la mano se le comunica al jugador que la carta que eligió no forma parte de su mano/no fue bien escrita
             var_cartaElegida=""  #Al haber un problema por lo dicho en la linea anterior, la carta elegida se asigna como VACIA
             print("La carta elegida no es parte de su mano. Verifique que escribio bien su carta.")
     if var_cartaElegida!="":   #Si la variable de la carta elegida queda VACIA, no se entra en este IF, pero si se pudo asignar un valor, significa que todo salio bien, por lo que se verifica que carta del vector fue seleccionada y se reemplaza por "CARTA USADA"
@@ -54,3 +53,8 @@ def elegir_carta(par_manoJugador):
             if par_manoJugador[x]==var_cartaElegida:
                 par_manoJugador[x]="*Carta Usada*"
     return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
+#########################################################
+##############FUNCION PARA ELEGIR CARTA BOT##############
+#########################################################
+def elegir_cartaBot(par_manoBot,par_cartaJugada,par_rondaActual):#par_manoBot: Mano de cartas del bot | par_cartaJugada: Carta usada por el jugador | par_rondaActual: Ronda actual de la mano (1-3)
+    for i in range (0,3):

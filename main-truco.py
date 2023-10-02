@@ -33,8 +33,7 @@ valores_cartas=[
     10,10,10,10,
     11,12,
     13,
-    14
-]
+    14]
 
 
 #print(libreria.function(cartas))
@@ -45,8 +44,16 @@ for i in range (0,40):
 ########EJEMPLO PARA USAR FUNCIONES##########
 #libreria.prueba()
 
-####PRUEBA REPARTIR
+####PRUEBA REPARTIR####
 vec_cartasJugador,vec_cartasBot=libreria.repartir(cartas) #SE USA libreria.*nombre_funcion* para invocar la funcion deseada
+x=0
+while x < 3:
+    for i in range (len(cartas)):
+        if cartas[i]==vec_cartasBot[x]:
+            vec_cartasBotValor=valores_cartas[i]
+    x=x+1
+print(vec_cartasBotValor)
+
 #################TESTEO DE FUNCION "ELEGIR_CARTA"###############
 #USO: variable_carta_elegida=libreria.elegir_carta(vec_cartasJugador/Bot)
 print(vec_cartasJugador)
