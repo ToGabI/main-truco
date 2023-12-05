@@ -3,6 +3,43 @@ import random
 #########################################################
 #########################################################
 #########################################################
+class copas_4:
+    nombre="4 de copas"
+    palo="copas"
+    valor=1
+    valor_envido=4
+class copas_5:
+    nombre="5 de copas"
+    palo="copas"
+    valor=2
+    valor_envido=5
+class copas_6:
+    nombre="6 de copas"
+    palo="copas"
+    valor=3
+    valor_envido=6
+class copas_7:
+    nombre="7 de copas"
+    palo="copas"
+    valor=4
+    valor_envido=7
+class copas_10:
+    nombre="10 de copas"
+    palo="copas"
+    valor=5
+    valor_envido=0
+class copas_11:
+    nombre="11 de copas"
+    palo="copas"
+    valor=6
+    valor_envido=0
+class copas_12:
+    nombre="12 de copas"
+    palo="copas"
+    valor=7
+    valor_envido=0
+
+
 cartas=[
     '4 de copas','4 de espada','4 de basto','4 de oro',
     '5 de copas','5 de espada','5 de basto','5 de oro',
@@ -17,6 +54,10 @@ cartas=[
     '7 de oro','7 de espada',
     '1 de basto',
     '1 de espada']
+
+#Palos
+
+
 #Valores de cada carta (Vector ordenado en base al anterior)
 valores_cartas=[
     1,1,1,1,
@@ -89,9 +130,14 @@ def elegir_carta(par_manoJugador):
 ##############FUNCION PARA ELEGIR CARTA BOT##############
 #########################################################
 
+
+
+
+
 #########################################################
 ##############FUNCION OBTENER VALORES CARTAS#############
 #########################################################
+
 def valores_de_mano(par_manoJugador):
     vec_valores=[]
     for x in range(0,3):
@@ -101,5 +147,8 @@ def valores_de_mano(par_manoJugador):
             valores=cartas.index(par_manoJugador[x])#Esto lo que hace es guardar las posiciones de la manoJugador del array 'Cartas', para despues buscar sus respectivos valores en el array 'Valores_cartas'. El 'index' cumple la misma funcion que el 'find' solo que en arrays
             vec_valores.append(valores_cartas[valores]) #Esto compara las posiciones de manoJugador con las de 'Valores_cartas' y los va poniendo en el array
     return vec_valores
-    
+
+#########################################################
+##############FUNCION OBTENER EL PALO####################
+#########################################################
 
