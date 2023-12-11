@@ -284,16 +284,15 @@ def repartir(cartas):
 ################FUNCION PARA ELEGIR CARTA################
 #########################################################
 def elegir_carta(par_manoJugador):
-    print("Su mano actual es: ", par_manoJugador)
-    var_cartaElegida=str(input("Por favor, seleccione una carta de su mano:"))
-    var_cartaElegida=var_cartaElegida.lower()    #Se pone todo en minusculas por si el jugador escribio la carta en mayusculas o "variado"
+    var_cartaElegida=(str(input("Por favor, seleccione una carta de su mano:"))).lower() 
     aux=True
-
     while aux:
         if par_manoJugador.__contains__(var_cartaElegida):
             par_manoJugador.remove(var_cartaElegida)
             aux=False
-    return var_cartaElegida    #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
+        else:
+            var_cartaElegida=(str(input("Carta mal tipeada, seleccione una carta de su mano:"))).lower()
+    return (var_cartaElegida)   #Se da como retorno la carta usada pero de todas formas el vector de la mano es modificado.
 #########################################################
 ##############FUNCION PARA ELEGIR CARTA BOT##############
 #########################################################
@@ -311,28 +310,30 @@ def elegir_cartaBot(par_manoBot):
 #########################################################
 ##############FUNCION OBTENER VALORES CARTAS#############
 #########################################################
-def valores_de_mano(par_manoJugador):
-    vec_valores=[]
-    for x in range(len(par_manoJugador)):
-        e=0
-        aux=1
-        while e<len(cartas) and aux!=0: #Lo que hace este while es hacer un barrido sobre la lista "cartas" y verificar que las cartas de la mano del jugador no se hayan usado, si se usaron, a vec_valores le agrega un -1, y si no se usaron, devuelve el valor de la carta usando cartas[posicion].valor
-            if par_manoJugador[x] != cartas[e].nombre:
-                aux=1
-            else:
-                posicion=e
-                aux=0
-            e=e+1
-        if aux == 1:
-            vec_valores.append(-1)
+
+def valor_carta_jugador(par_manoJugador):
+    aux=1
+    e=0
+    while e < len(cartas) and aux !=0:
+        if par_manoJugador != cartas[e].nombre:
+            aux=1
         else:
-            vec_valores.append(cartas[posicion].valor)
-    return vec_valores
+            posicion=e
+            aux=0
+        e+=1
+    return (cartas[posicion].valor)
 
-
-def valor_carta(par_manoJugador):
-    
-    return
+def valor_carta_bot(par_cartaBot):
+    aux=1
+    e=0
+    while e < len(cartas) and aux !=0:
+        if par_cartaBot != cartas[e].nombre:
+            aux=1
+        else:
+            posicion=e
+            aux=0
+        e+=1
+    return (cartas[posicion].valor)
 #########################################################
 ####################FUNCION ENVIDO#######################
 #########################################################
