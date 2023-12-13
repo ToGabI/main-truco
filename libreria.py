@@ -106,7 +106,7 @@ class oro_12:
 class espada_1:
     nombre="1 de espada"
     palo="espada"
-    valor=14
+    valor=15
     valor_envido=1
 class espada_2:
     nombre="2 de espada"
@@ -156,7 +156,7 @@ class espada_12:
 class basto_1:
     nombre="1 de basto"
     palo="basto"
-    valor=13
+    valor=14
     valor_envido=1
 class basto_2:
     nombre="2 de basto"
@@ -254,32 +254,29 @@ cartas=[copas_1,
 #########################################################
 #################FUNCION PARA REPARTIR###################
 #########################################################
-def repartir(cartas):
+def repartir_jugador(par_cartas):
     jugador=[]
-    bot=[]
-    general=[]
-
-
-    #Jugador
     for x in range(0,3):
         palabra_random=(random.choice(cartas)) #Pickea una palabra random de cartas
         for e in range(0,len(jugador)): #Ciclo que servira para recorrer cada elemento del array cartas
             while jugador.__contains__(palabra_random) == True: #Si el array contiene la palabra pickeada, genera otra
                 palabra_random=(random.choice(cartas))
         jugador.append(palabra_random)
+    return jugador
 
+
+
+def repartir_bot(cartas,par_manoJugador):
+    bot=[]
 
     #Maquina
     for x in range(0,3):
         palabra_random=(random.choice(cartas)) #Pickea una palabra random de cartas
         for e in range(0,len(bot)): #Ciclo que servira para recorrer cada elemento del array cartas
-            while bot.__contains__(palabra_random) == True or jugador.__contains__(palabra_random) == True: #Si el array contiene la palabra pickeada o si el jugador la tiene, genera otra
+            while bot.__contains__(palabra_random) == True or par_manoJugador.__contains__(palabra_random) == True: #Si el array contiene la palabra pickeada o si el jugador la tiene, genera otra
                 palabra_random=(random.choice(cartas))
         bot.append(palabra_random)    
-    
-    general.append(bot)
-    general.append(jugador)
-    return general
+    return bot
 #########################################################
 ################FUNCION PARA ELEGIR CARTA################
 #########################################################
@@ -326,7 +323,7 @@ def valor_carta_jugador(par_manoJugador):
 def valor_carta_bot(par_cartaBot):
     aux=1
     e=0
-    while e < len(cartas) and aux !=0:
+    while aux !=0:
         if par_cartaBot != cartas[e].nombre:
             aux=1
         else:
